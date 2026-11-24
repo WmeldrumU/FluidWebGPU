@@ -7,8 +7,11 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
 find_package(SDL3 REQUIRED)
+set(DAWN_FETCH_DEPENDENCIES ON)
+add_subdirectory("dawn" EXCLUDE_FROM_ALL)
 
 add_executable(FluidWebGPU main.c)
+
 
 
 if(EMSCRIPTEN)
@@ -18,6 +21,6 @@ if(EMSCRIPTEN)
   target_include_directories(FluidWebGPU PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dawn)
 endif()
 
-target_link_libraries(FluidWebGPU SDL3::SDL3)
+target_link_libraries(FluidWebGPU SDL3::SDL3 webgpu_dawn)
 
 
