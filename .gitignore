@@ -1,2 +1,3 @@
 /build/
 .conan2/
+/__pycache__

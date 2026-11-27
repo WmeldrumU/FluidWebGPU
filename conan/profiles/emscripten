@@ -1,0 +1,15 @@
+[settings]
+os=Emscripten
+arch=wasm
+compiler=emcc
+compiler.version=6.0.13
+compiler.cstd=17
+compiler.libcxx=libc++
+build_type=Release
+
+[tool_requires]
+emsdk/6.0.13
+ninja/[*]
+
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
